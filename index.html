@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas Riviera Maya</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <div id="notificacion" class="notificacion oculto"></div>
+
+  <header class="encabezado">
+    <h1>Reservas Riviera Maya</h1>
+    <p>Selecciona y calcula tu experiencia turística</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="controles" aria-label="Controles del catálogo">
+
+      <input id="buscador" type="search" placeholder="Buscar experiencia...">
+
+      <select id="ordenPrecio">
+        <option value="normal">Orden original</option>
+        <option value="ascendente">Menor precio</option>
+        <option value="descendente">Mayor precio</option>
+      </select>
+
+      <div class="grupo-botones-categoria">
+        <button class="btn-cat activo" data-categoria="todas" type="button">Todas</button>
+        <button class="btn-cat" data-categoria="naturaleza" type="button">Naturaleza</button>
+        <button class="btn-cat" data-categoria="cultura" type="button">Cultura</button>
+        <button class="btn-cat" data-categoria="aventura" type="button">Aventura</button>
+        <button class="btn-cat" data-categoria="gastronomia" type="button">Gastronomía</button>
+        <button class="btn-cat" data-categoria="bienestar" type="button">Bienestar</button>
+      </div>
+
+      <input id="filtroPrecioMax" type="number" placeholder="Precio máximo ($ MXN)" min="0">
+    </section>
+
+    <p id="estado" class="estado">Cargando experiencias...</p>
+    <section id="catalogo" class="catalogo"></section>
+
+    <section class="resumen">
+      <h2>Mi reservación</h2>
+      <div id="listaReservas">
+        <p>No hay experiencias seleccionadas.</p>
+      </div>
+      
+      <div class="resumen-totales">
+        <p>Total de personas: <span id="totalPersonas">0</span></p>
+        <p class="total">Importe total: <span id="total">$0 MXN</span></p>
+      </div>
+
+      <button id="btnVaciar" class="btn-vaciar" style="display: none;" type="button">Vaciar reservación</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto académico de frontend</p>
+  </footer>
+</body>
+
+</html>
